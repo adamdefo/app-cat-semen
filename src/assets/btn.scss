@@ -1,0 +1,62 @@
+.btn {
+    background-color: #e0e0e0;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  color: #1a1a1a;
+  padding: 12px 20px;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+  &:hover {
+    background-color: #c0c0c0;
+    border-color: #c0c0c0;
+    color: #2b2b2b;
+    cursor: pointer;
+  }
+  &:disabled {
+    background-color: #dedede;
+    border-color: #dedede;
+    color: #808080;
+    &:hover {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+  &_primary {
+    background-color: #076cc6;
+    border-color: #076cc6;
+    color: #ffffff;
+    &:hover {
+      background-color: #017fef;
+      border-color: #017fef;
+      color: #ffffff;
+    }
+  }
+  &_dark {
+    background-color: #1b1b1b;
+    border-color: #1b1b1b;
+    color: #ababab;
+    &:hover {
+      background-color: #3b3b3b;
+      border-color: #3b3b3b;
+      color: #ffffff;
+    }
+  }
+  & + & {
+    margin-left: 8px;
+  }
+  &_l {
+    padding: 24px 40px;
+    font-size: 32px;
+  }
+  &_m {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  &_s {
+    border-radius: 4px;
+    padding: 6px 10px;
+  }
+}
