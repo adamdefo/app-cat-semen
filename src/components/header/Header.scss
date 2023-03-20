@@ -1,71 +1,69 @@
+$header_border: #1a1a1a;
+$header_color: #ababab;
+$header_link_color_hover: #FFFFFF;
+
 .wrap-header {
-    border-bottom: 1px solid #1a1a1a;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    &__container {
-        position: relative;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 1200px;
-    }
+  border-bottom: 1px solid $header_border;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  & > .container {
+    max-width: 1170px;
+  }
 }
 
 .header {
+  color: $header_color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  position: relative;
+  padding: 2rem;
+  width: 100%;
+  &__logo {
+    width: 100px;
+  }
+  &__nav {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+  }
+  &__auth {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 24px;
-    width: 100%;
-    &__logo {
-        color: #ababab;
-        width: 100px;
+    line-height: 1.2;
+    & button {
+      margin-left: .8rem;
     }
-    &__nav {
-        display: flex;
-        flex: 2;
-        align-items: center;
-        justify-content: center;
-    }
-    &__auth {
-        display: flex;
-        align-items: center;
-        color: #ababab;
-        font-size: 14px;
-        line-height: 1.2;
-        & button {
-            margin-left: 10px;
-        }
-    }
+  }
 }
 
 .nav {
-    display: block;
+  display: block;
+  margin: 0;
+  padding: 0;
+  &__list {
+    list-style: none;
     margin: 0;
     padding: 0;
-    &__list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+  }
+  & li {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+    margin: 0 .8rem;
+    & a {
+      border: 0;
+      color: $header_color;
+      &:visited {
+        color: inherit;
+      }
+      &:hover, &:active, &.active {
+        color: $header_link_color_hover;
+      }
     }
-    & li {
-        display: inline-block;
-        vertical-align: middle;
-        color: #ababab;
-        font-size: 14px;
-        line-height: 1.2;
-        margin: 0 8px;
-        & a {
-            border: 0;
-            color: #ababab;
-            &:visited {
-                color: inherit;
-            }
-            &:hover, &:active, &.active {
-                color: #FFFFFF;
-            }
-        }
-    }
+  }
 }

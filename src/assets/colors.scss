@@ -1,0 +1,28 @@
+$body: #0A0A0A;
+$body_color: #BDBDBD;
+
+$primary: #0A0A0A;
+$white: #FFFFFF;
+$link: #ABABAB;
+$link_border: rgba(171, 171, 171, .3);
+$link_border_hover: rgba(171, 171, 171, .7);
+
+// BUTTON
+$btn: #E0E0E0;
+$btn_border: rgba(255, 255, 255, 0);
+$btn_color: #1A1A1A;
+$btn_hover: #C0C0C0;
+$btn_hover_color: #2b2b2b;
+$btn_disabled: #DEDEDE;
+$btn_disabled_border: #DEDEDE;
+$btn_disabled_color: #808080;
+// BUTTON PRIMARY
+$btn_primary: #076CC6;
+$btn_primary_color: #FFFFFF;
+$btn_primary_hover: #017FEF;
+$btn_primary_hover_color: $btn_primary_color;
+// BUTTON DARK
+$btn_dark: #1B1B1B;
+$btn_dark_color: #ABABAB;
+$btn_dark_hover: #3b3b3b;
+$btn_dark_hover_color: #FFFFFF;

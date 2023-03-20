@@ -23,7 +23,7 @@ const Header = function() {
 
   return (
     <div className="wrap-header">
-      <div className="wrap-header__container">
+      <div className="container">
         <header className="header">
           <div className="header__logo">{'v' + appVersion}</div>
           <div className="header__nav">
@@ -40,7 +40,7 @@ const Header = function() {
           </div>
           <div className="header__auth">
             <Link to={user ? 'user' : '/login'}>{ user ? user.name : 'Login' }</Link>
-            <button type="button" className="btn btn_s" onClick={onLogOut}>{ !user ? 'Sign Up' : 'Logout' }</button>
+            <button type="button" className="btn btn_primary btn_s" onClick={onLogOut}>{ !user ? 'Sign Up' : 'Logout' }</button>
           </div>
         </header>
       </div>

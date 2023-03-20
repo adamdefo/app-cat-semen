@@ -1,3 +1,5 @@
+@import './colors.scss';
+@import './grid.scss';
 @import './btn.scss';
 
 * {
@@ -5,10 +7,19 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  -moz-transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color
+}
+
+html {
+  font-size: 14px;
 }
 
 body {
-  background-color: #0a0a0a;
+  background-color: $body;
+  color: $body_color;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -23,15 +34,15 @@ code {
 }
 
 a {
-  border-bottom: 1px solid rgba(171, 171, 171, .3);
-  color: #ababab;
+  border-bottom: 1px solid $link_border;
+  color: $link;
   text-decoration: none;
   outline: none;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   transition: all .3s;
   &:hover {
-    border-bottom-color: rgb(171, 171, 171, 1);
+    border-bottom-color: $link_border_hover;
     cursor: pointer;
   }
 }
@@ -41,7 +52,10 @@ a {
 }
 
 .title {
-  color: #ffffff;
-  font-size: 36px;
+  color: $white;
+  font-size: 2.4rem;
+  line-height: 1;
   text-align: center;
+  margin-top: 8px;
+  margin-bottom: 2.4rem;
 }

@@ -1,47 +1,33 @@
 .btn {
-    background-color: #e0e0e0;
-  border: 2px solid #e0e0e0;
+  background-color: $btn;
+  border: 1px solid $btn_border;
   border-radius: 6px;
-  color: #1a1a1a;
-  padding: 12px 20px;
-  font-size: 14px;
+  color: $btn_color;
+  padding: .85rem 2.1429rem;
+  font-size: 1rem;
   line-height: 1;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: all .8s cubic-bezier(0.33, 1, 0.68, 1);
+  -moz-transition: all .8s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: all .8s cubic-bezier(0.33, 1, 0.68, 1);
   &:hover {
-    background-color: #c0c0c0;
-    border-color: #c0c0c0;
-    color: #2b2b2b;
+    background-color: $btn_hover;
+    color: $btn_hover_color;
     cursor: pointer;
   }
-  &:disabled {
-    background-color: #dedede;
-    border-color: #dedede;
-    color: #808080;
-    &:hover {
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-  }
   &_primary {
-    background-color: #076cc6;
-    border-color: #076cc6;
-    color: #ffffff;
+    background-color: $btn_primary;
+    color: $btn_primary_color;
     &:hover {
-      background-color: #017fef;
-      border-color: #017fef;
-      color: #ffffff;
+      background-color: $btn_primary_hover;
+      color: $btn_primary_hover_color;
     }
   }
   &_dark {
-    background-color: #1b1b1b;
-    border-color: #1b1b1b;
-    color: #ababab;
+    background-color: $btn_dark;
+    color: $btn_dark_color;
     &:hover {
-      background-color: #3b3b3b;
-      border-color: #3b3b3b;
-      color: #ffffff;
+      background-color: $btn_dark_hover;
+      color: $btn_dark_hover_color;
     }
   }
   & + & {
@@ -58,5 +44,14 @@
   &_s {
     border-radius: 4px;
     padding: 6px 10px;
+  }
+  &:disabled {
+    background-color: $btn_disabled;
+    border-color: $btn_disabled_border;
+    color: $btn_disabled_color;
+    &:hover {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
   }
 }

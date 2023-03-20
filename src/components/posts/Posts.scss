@@ -1,0 +1,43 @@
+.post-list {
+  & > .row {
+    margin: 0 1.6rem;
+  }
+  & .col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.tile {
+  background-color: #161b22;
+  border-radius: .4rem;
+  color: #c9d1d9;
+  margin: .8rem;
+  padding: 2.4rem 2.4rem 1.6rem;
+  &__header {
+    display: flex;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  &__icon {
+    display: block;
+    width: 52px;
+    height: 52px;
+    & svg {
+      float: right;
+      &:not(:root) {
+        overflow: hidden;
+      }
+    }
+  }
+  & p {
+    color: #8b949e;
+    margin-bottom: 1rem;
+  }
+  &:hover {
+    color: #58a6ff;
+    & p {
+      color: inherit;
+    }
+  }
+}

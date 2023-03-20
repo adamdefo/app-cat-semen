@@ -23,7 +23,7 @@ const Auth = function() {
         } catch {
           console.error('Error');
         }
-      }, 2000);
+      });
     });
   };
 
