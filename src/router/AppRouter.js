@@ -11,10 +11,10 @@ const AppRouter = function() {
   return (
     <Router>
       <Routes>
-        <Route element={<AppRoot />}>
+        <Route path="/" element={<AppRoot />}>
+          <Route path="" element={<Main />} />
           <Route path="/login" element={<Auth />} />
           <Route path="/registration" element={<Registration />} />
-          <Route path="/" element={<Main />} />
           <Route path="/posts"
             element={
               <AppGuard>
