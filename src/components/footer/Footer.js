@@ -1,9 +1,9 @@
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from './../../redux/auth/authState';
-import './Header.scss';
+import './Footer.scss';
 
-const Header = function() {
+const Footer = function() {
 
   const navigate = useNavigate();
   const appVersion = useSelector((state) => state.root.appVersion);
@@ -22,31 +22,33 @@ const Header = function() {
   };
 
   return (
-    <div className="wrap-header">
+    <div className="wrap-footer">
       <div className="container">
-        <header className="header">
-          <div className="header__logo">{'v' + appVersion}</div>
-          <div className="header__nav">
+        <footer className="footer">
+          <div className="footer__logo">{'v' + appVersion}</div>
+          <div className="footer__nav">
             <nav className="nav">
               <ul className="nav__list">
                 <li>
-                  <NavLink to="/">Me</NavLink>
+                  <NavLink to="/about">About</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/posts">Post(private)</NavLink>
+                  <NavLink to="/services">Services</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/support">Contacts</NavLink>
                 </li>
               </ul>
             </nav>
           </div>
-          <div className="header__auth">
-            <Link to={user ? 'user' : '/login'}>{ user ? user.name : 'Login' }</Link>
-            <button type="button" className="btn btn_primary btn_s" onClick={onLogOut}>{ !user ? 'Sign Up' : 'Log Out' }</button>
+          <div className="footer__auth">
+            { user && <button type="button" className="btn btn_primary btn_s" onClick={onLogOut}>Log Out</button> }
           </div>
-        </header>
+        </footer>
       </div>
     </div>
   );
 
 }
 
-export default Header;
+export default Footer;

@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import Header from './../components/header/Header';
+import Footer from './../components/footer/Footer';
 import './AppRoot.scss';
 
 const AppRoot = function() {
@@ -12,6 +13,7 @@ const AppRoot = function() {
           <Outlet />
         </div>
       </main>
+      <Footer />
     </div>
   );
 

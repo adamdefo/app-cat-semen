@@ -11,8 +11,8 @@ const AppRouter = function() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AppRoot />}>
-          <Route path="" element={<Main />} />
+        <Route element={<AppRoot />}>
+          <Route index element={<Main />} />
           <Route path="/login" element={<Auth />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/posts"

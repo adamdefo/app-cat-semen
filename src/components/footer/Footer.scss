@@ -1,19 +1,17 @@
-$header_border: #1a1a1a;
-$header_color: #ababab;
+$footer_border: #1a1a1a;
+$footer_color: #ababab;
 
-.wrap-header {
-  border-bottom: 1px solid $header_border;
-  position: fixed;
-  top: 0;
-  left: 0;
+.wrap-footer {
+  border-top: 1px solid $footer_border;
+  margin-top: 2rem;
   width: 100%;
   & > .container {
     max-width: 1170px;
   }
 }
 
-.header {
-  color: $header_color;
+.footer {
+  color: $footer_color;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,6 +28,15 @@ $header_color: #ababab;
     align-items: center;
     justify-content: center;
     max-width: 70%;
+    & > .nav {
+      & li {
+        & a {
+          &:hover, &:active, &.active {
+            color: #076CC6;
+          }
+        }
+      }
+    }
   }
   &__auth {
     display: flex;
