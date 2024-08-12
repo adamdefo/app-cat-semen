@@ -30,7 +30,13 @@ $footer_color: #ababab;
     max-width: 70%;
     & > .nav {
       & li {
+        &.active {
+          font-weight: bold;
+        }
         & a {
+          &.active {
+            font-weight: bold;
+          }
           &:hover, &:active, &.active {
             color: #076CC6;
           }

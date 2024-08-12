@@ -8,6 +8,7 @@ export const authState = createSlice({
   reducers: {
     logIn: (state, action) => {
       console.log('authState:action --> logIn', action.payload);
+      sessionStorage.setItem('USER', JSON.stringify(action.payload));
       state.user = action.payload;
     },
     logOut: (state) => {

@@ -27,6 +27,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  &.dark-theme {
+    background-color: $body-dark;
+    color: $body-dark_color;
+  }
 }
 
 code {

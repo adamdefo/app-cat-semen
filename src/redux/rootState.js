@@ -4,14 +4,20 @@ export const RootState = createSlice({
   name: 'root',
   initialState: {
     appVersion: '0.0.1',
+    theme: sessionStorage.getItem('THEME') || 'default',
   },
   reducers: {
-    setAppVersion: (state) => {
-      console.log('rootState:action --> getAppVersion');
+    getAppVersion: (state) => {
+      console.log('rootState: appVersion', state.appVersion);
+    },
+    setTheme: (state, action) => {
+      console.log('rootState: setTheme', action);
+      sessionStorage.setItem('THEME', action.payload);
+      state.theme = action.payload;
     },
   },
 })
 
-export const { setAppVersion } = RootState.actions;
+export const { getAppVersion, setTheme } = RootState.actions;
 
 export default RootState.reducer;

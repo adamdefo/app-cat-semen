@@ -1,24 +1,26 @@
-import './Main.scss'
-import { useEffect, useState } from "react";
+import './Main.scss';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import json from "./response.json";
-
-function func() {
-  console.log('func');
-}
-
-// const dispatch = useDispatch();
+import { logIn } from '../../redux/auth/authState.js';
+import json from './response.json';
+import { ENDPOINTS, http } from '../../services/api.service.ts';
 
 const Main = function() {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
-  if (user) {
-    console.log(user);
-  }
-  
+  const [password, setPassword] = useState('pass');
+
+  useEffect(() => {
+    console.log('Main');
+  }, [password]);
+
+  http(ENDPOINTS.LIST, null).then(resp => {
+    console.log(resp);
+  }).catch(err => console.error(err));
+
   const [isOn, setIsOn] = useState(false);
   function onToggleMode(v) {
     // console.log(v, Data);
-    // func();
     setIsOn(!v);
   }
 
@@ -76,18 +78,19 @@ const Main = function() {
     console.log(filteredTagList);
   }
 
-  run();
+  // run();
+
+  function start() {
+    console.log(user);
+    dispatch(logIn({login: 'admin', password: 'admin'}));
+    setPassword('admin');
+  }
 
   return (
     <>
-      <button className="btn" onClick={run}>Run</button>
       <div className="title">Main</div>
-      <div className="switch-mode">
-        <button className="btn" onClick={ev => {
-          ev.preventDefault()
-          ev.stopPropagation()
-          onToggleMode(isOn)
-        }}>{ isOn ? 'ON' : 'OFF' }</button>
+      <div className="content center">
+        <button className="btn btn_white" onClick={start}>Start</button>
       </div>
     </>
   );

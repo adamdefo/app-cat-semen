@@ -1,13 +1,11 @@
 import { Navigate, useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 const AppGuard = function({ children }) {
 
-  const user = useSelector((state) => state.auth.user);
   const location = useLocation();
-  console.log('location', location);
+  // console.log('AppGuard:location', location);
 
-  if (!user) {
+  if (!sessionStorage.getItem('USER')) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 

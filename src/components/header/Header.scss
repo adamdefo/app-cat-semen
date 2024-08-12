@@ -21,8 +21,16 @@ $header_color: #ababab;
   position: relative;
   padding: 2rem;
   width: 100%;
+  &__theme-switcher {
+    margin-left: .8rem;
+  }
   &__logo {
-    width: 100px;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    & > button {
+      margin-left: .8rem;
+    }
   }
   &__nav {
     display: flex;
@@ -41,5 +49,51 @@ $header_color: #ababab;
     & button {
       margin-left: .8rem;
     }
+  }
+}
+
+.theme-switcher {
+  position: relative;
+  background-color: #ABABAB;
+  // border: 1px solid #CECECE;
+  border: 0;
+  border-radius: 11px;
+  overflow: hidden;
+  outline: none;
+  padding: 0;
+  text-overflow: ellipsis;
+  height: 20px;
+  width: 36px;
+  white-space: nowrap;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out;
+  transition: background-color .25s ease-in-out;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    background-color: #faf600;
+    border: 1px solid #fad000;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    -moz-transition: all .15s linear;
+    -webkit-transition: all .15s linear;
+    transition: all .15s linear;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  &.on {
+    background-color: #FEFEFE;
+    &:before {
+      -moz-transform: translateX(16px);
+      -webkit-transform: translateX(16px);
+      transform: translateX(16px);
+    }
+  }
+  &:hover {
+    cursor: pointer;
   }
 }

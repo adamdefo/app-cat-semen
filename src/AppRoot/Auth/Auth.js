@@ -1,8 +1,8 @@
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logIn } from './../../redux/auth/authState';
 import './Auth.scss';
+import { ENDPOINTS, http } from '../../services/api.service.ts';
 
 const Auth = function() {
 
@@ -14,7 +14,7 @@ const Auth = function() {
     e.preventDefault();
     // TODO переделать через сервис 
     const apiUrl = 'https://jsonplaceholder.typicode.com/users/1';
-    axios.get(apiUrl).then(resp => {
+    http(apiUrl, null).then(resp => {
       setTimeout(() => {
         console.log(resp);
         try {

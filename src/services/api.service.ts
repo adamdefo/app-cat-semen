@@ -1,9 +1,8 @@
 import axios, {CreateAxiosDefaults, AxiosInstance, AxiosResponse} from 'axios';
-import {API_URL} from './../@utils/constants';
+import { ENDPOINTS } from '../@utils/urls.ts';
 
-const IP = API_URL;
-const PORT = ':80';
-export const CONFIG: CreateAxiosDefaults = {
+const IP = 'http://localhost:8888/';
+const CONFIG: CreateAxiosDefaults = {
   // baseURL: IP + `/${PORT}/api`,
   baseURL: IP + `api-shop`,
   headers: {
@@ -13,21 +12,21 @@ export const CONFIG: CreateAxiosDefaults = {
   responseType: 'json',
 };
 
-export const HTTP_METHOD = {
+const HTTP_METHOD = {
   get: 'get',
   post: 'post',
   delete: 'delete',
-}
+};
 
-export function createAxios<T = CreateAxiosDefaults>(extraConfig: T): AxiosInstance {
+function createAxios<T = CreateAxiosDefaults>(extraConfig: T): AxiosInstance {
   return axios.create(extraConfig ? {...CONFIG, ...extraConfig} : CONFIG);
 }
 
-export function createRequest<T = CreateAxiosDefaults>(extraConfig?: T): AxiosInstance {
+function createRequest<T = CreateAxiosDefaults>(extraConfig?: T): AxiosInstance {
   return createAxios(extraConfig);
 } 
 
-export function http(endpoint: string, data: any, method: string = HTTP_METHOD.get, params?: any): Promise<AxiosResponse> {
+function http(endpoint: string, data: any = null, method: string = HTTP_METHOD.get, params?: any): Promise<AxiosResponse> {
   const request = createRequest();
   try {
     if (method === HTTP_METHOD.post) {
@@ -41,4 +40,10 @@ export function http(endpoint: string, data: any, method: string = HTTP_METHOD.g
     console.error(`Calling API is fail: ${error.message}`);
     throw error;
   }
+}
+
+export {
+  ENDPOINTS,
+  HTTP_METHOD,
+  http
 }
