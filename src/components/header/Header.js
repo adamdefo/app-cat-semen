@@ -6,18 +6,16 @@ import { logOut } from './../../redux/auth/authState';
 import './Header.scss';
 
 const Header = function() {
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const appVersion = useSelector((state) => state.root.appVersion);
   const currentTheme = useSelector((state) => state.root.theme);
   const [theme, onSetTheme] = useState(currentTheme);
-  const [isOnThemeSwitcher, setIsOnThemeSwitcher] = useState(currentTheme !== 'default');
-  console.log('isOnThemeSwitcher', isOnThemeSwitcher);
+  const [isOnThemeSwitcher, setIsOnThemeSwitcher] = useState(currentTheme !== 'light');
   function onToggleTheme() {
-    // console.log('onToggleTheme');
-    const v = currentTheme === 'default' ? 'dark' : 'default';
-    setIsOnThemeSwitcher(currentTheme === 'default');
+    const v = currentTheme === 'light' ? 'dark' : 'light';
+    setIsOnThemeSwitcher(currentTheme === 'light');
     onSetTheme(v);
     dispatch(setTheme(v));
   }
@@ -35,7 +33,7 @@ const Header = function() {
     }
   };
 
-  const themeText = Set + (theme !== 'default' ? 'White' : 'Dark') + theme;
+  const themeText = Set + (theme !== 'light' ? 'White' : 'Dark') + theme;
 
   return (
     <div className="wrap-header">

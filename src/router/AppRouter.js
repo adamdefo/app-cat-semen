@@ -10,8 +10,7 @@ import Page from './../components/page/Page';
 const AppRouter = function() {
 
   const currentTheme = useSelector((state) => state.root.theme);
-  console.log(currentTheme);
-  if (currentTheme !== 'default') {
+  if (currentTheme !== 'light') {
     document.body.classList.add('dark-theme');
   } else {
     document.body.classList.remove('dark-theme');

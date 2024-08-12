@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 import AppRouter from './router/AppRouter';
-import './assets/index.scss';
+import './assets/styles/index.scss';
 
 const appRootRender = ReactDOM.createRoot(document.getElementById('app-cat-semen'));
 appRootRender.render(

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { setUser } from './authReducer';
 
 export const authState = createSlice({
   name: 'auth',
@@ -6,11 +7,7 @@ export const authState = createSlice({
     user: null,
   },
   reducers: {
-    logIn: (state, action) => {
-      console.log('authState:action --> logIn', action.payload);
-      sessionStorage.setItem('USER', JSON.stringify(action.payload));
-      state.user = action.payload;
-    },
+    logIn: setUser,
     logOut: (state) => {
       console.log('authState:action --> logOut');
       state.user = null;

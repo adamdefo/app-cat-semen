@@ -10,7 +10,7 @@ const Auth = function() {
   const dispatch = useDispatch();
 
   function onLogIn(e) {
-    console.log('Auth --> onLogIn');
+    console.log('Auth:onLogIn');
     e.preventDefault();
     // TODO переделать через сервис 
     const apiUrl = 'https://jsonplaceholder.typicode.com/users/1';
@@ -29,7 +29,7 @@ const Auth = function() {
 
   return (
     <div className="auth-form">
-      <div className="auth-form__title">Вход</div>
+      <div className="auth-form__title title">Вход</div>
       <form className="form" onSubmit={onLogIn} noValidate>
         <div className="form__control">
           <input type="text" name="login" className="input input_dark" />
