@@ -6,7 +6,7 @@ import store from './redux/store';
 import AppRouter from './router/AppRouter';
 import './assets/styles/index.scss';
 
-const appRootRender = ReactDOM.createRoot(document.getElementById('app-cat-semen'));
+const appRootRender = ReactDOM.createRoot(document.getElementById('app'));
 appRootRender.render(
   <Provider store={store}>
     <AppRouter />

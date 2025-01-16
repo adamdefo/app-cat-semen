@@ -12,7 +12,7 @@ const Main = function() {
 
   useEffect(() => {
     console.log('Main');
-  }, [password]);
+  }, []);
 
   http(ENDPOINTS.LIST, null).then(resp => {
     console.log(resp);
@@ -92,6 +92,14 @@ const Main = function() {
       <div className="content center">
         <button className="btn btn_white" onClick={start}>Start</button>
       </div>
+      <section className="section">
+        <div className="section__flex-row">
+          <div className="section__flex-item">
+            <div>FOCUS</div>
+            <div>Lorem ipsum</div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

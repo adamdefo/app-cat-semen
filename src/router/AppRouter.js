@@ -19,20 +19,14 @@ const AppRouter = function() {
   return (
     <Router>
       <Routes>
-        <Route element={<AppRoot />}>
-          <Route index path="/"
-            element={
-              <AppGuard>
-                <Main />
-              </AppGuard>
-            }
-          />
-          <Route path="/about" element={<Page title="About" />} />
-          <Route path="/services" element={<Page title="Services" />} />
-          <Route path="/contacts" element={<Page title="Contacts" />} />
-          <Route path="/login" element={<Auth />} />
-          <Route path="/registration" element={<Registration />} />
+        <Route element={<AppGuard><AppRoot /></AppGuard>}>
+          <Route index path="/" element={<Main />} />
         </Route>
+        <Route path="/about" element={<Page title="About" />} />
+        <Route path="/services" element={<Page title="Services" />} />
+        <Route path="/contacts" element={<Page title="Contacts" />} />
+        <Route path="/login" element={<Auth />} />
+        <Route path="/registration" element={<Registration />} />
       </Routes>
     </Router>
   );

@@ -1,10 +1,10 @@
 import axios, {CreateAxiosDefaults, AxiosInstance, AxiosResponse} from 'axios';
 import { ENDPOINTS } from '../@utils/urls.ts';
 
-const IP = 'http://localhost:8888/';
+const IP = 'http://localhost/';
 const CONFIG: CreateAxiosDefaults = {
   // baseURL: IP + `/${PORT}/api`,
-  baseURL: IP + `api-shop`,
+  baseURL: IP + `api/cat-semen`,
   headers: {
     // 'Content-Type': 'application/json',
     'Content-Type': 'multipart/form-data',
